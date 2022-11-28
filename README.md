@@ -47,6 +47,18 @@ Os usuários previamente cadastrados podem se conectar ao Instafake a partir de 
   <img src="https://github.com/kaykyextr3me/Instafake/blob/75c917f53bfd22ea4c9bd0f4ebc89d920753e9b0/files_readme/tela_login.png" width="500x">
 </div>
 
+## ► Perfils dos Usuários do Instafake
+Após realizado o cadastro ou o login, o usuário é redirecionado para a sua página de perfil onde ele terá acesso a uma série de funções. A pagina do perfil contêm uma dois botões principais. Um para criar publicações, que abrirá uma janela pop up onde será realizada a inserção de novas fotos ou gifs no perfil e na página do feed e um botão Editar perfil que redireciona o usuário para uma nova página para realizar certas alterações no seu perfil.
+
+### → Tela de Perfil de Usuário
+<div align="center">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/dbd40be5b70d332326a313571ae913cf479c5f7c/files_readme/tela_perfil_usuario.png" width="500x">
+</div>
+
+### → PopUp Realizar Nova Publicação
+<div align="center">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/05381de62504891fd7a34d200a827ca4213c4d39/files_readme/pop_up_novopost.png" width="500x">
+</div>
 
 
 
