@@ -18,7 +18,7 @@ O db_instafake possui as tabelas usuario_dadospessoais e publicacoes que possuem
 
 ### → Modelo Físico: <br>
 <div align="center">
-  <img src="https://github.com/kaykyextr3me/Instafake/blob/d9af1f5be8dd23708caac5c17260064cce042419/files_readme/banco%20de%20dados.png" width="500x">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/d14ee0adedb9021bf10f722fc7dd4ff78fe771b2/files_readme/banco%20de%20dados.png" width="500x">
 </div>
 <br>
 
@@ -27,12 +27,12 @@ Para realizar o cadastro no Instafake foi desenvolvido um sistema com código de
 
 ### → Tela de Cadastro
 <div align="center">
-  <img src="https://github.com/kaykyextr3me/Instafake/blob/92b061097a840667d1fbbb5134ff9e90e601d021/files_readme/tela_cadastro_.png" width="500x">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/d14ee0adedb9021bf10f722fc7dd4ff78fe771b2/files_readme/tela_cadastro_.png" width="500x">
 </div> <br>
 
 ### → Tela de Verificação de Email
 <div align="center">
-  <img src="https://github.com/kaykyextr3me/Instafake/blob/f84d79cf80dc54e0d178bdc1ebc15ec7f1056a89/files_readme/tela_ver_email.png" width="500x">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/d14ee0adedb9021bf10f722fc7dd4ff78fe771b2/files_readme/tela_ver_email.png" width="500x">
 </div>
 
 
