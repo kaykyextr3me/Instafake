@@ -60,6 +60,14 @@ Após realizado o cadastro ou o login, o usuário é redirecionado para a sua p�
   <img src="https://github.com/kaykyextr3me/Instafake/blob/05381de62504891fd7a34d200a827ca4213c4d39/files_readme/pop_up_novopost.png" width="500x">
 </div>
 
+## ► Atualização de Dados de Usuário
+Ao ser redirecionado para a tela de edição de perfil, o usuário tem acesso a novas funcionalidaes. Por aqui ele pode alterar sua foto de perfil, seu nome de usuário e até inserir uma biografia. Além disso o usuário pode alterar a sua senha. De forma bem parecida ao que existe no Instagram real.
+
+### → Tela de Edição de Perfil
+<div align="center">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/98741d66c2e90711c5e4fcc65b2205baa88e8d8b/files_readme/tela_editar_perfil.png" width="500x">
+</div>
+
 
 
 
