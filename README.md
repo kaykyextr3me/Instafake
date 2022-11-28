@@ -39,6 +39,15 @@ Para realizar o cadastro no Instafake foi desenvolvido um sistema com código de
 <br> As senhas dos usuários são criptografadas e depois salvas no banco de dados com o auxílio da biblioteca bcrypt.
 
 
+## ► Autenticação de Usuários
+Os usuários previamente cadastrados podem se conectar ao Instafake a partir de um celular ou email (de sua escolha no momento do cadastro) e da senha salvas no banco. O programa verifica a existência do usuário no banco de dados e valida a entrada, caso a senha tenha sido inserida corretamente. As senhas são comparadas criptografadas, aumentando a segurança do Instafake.
+
+### → Tela de Login
+<div align="center">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/75c917f53bfd22ea4c9bd0f4ebc89d920753e9b0/files_readme/tela_login.png" width="500x">
+</div>
+
+
 
 
 
