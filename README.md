@@ -35,6 +35,8 @@ Para realizar o cadastro no Instafake foi desenvolvido um sistema com código de
   <img src="https://github.com/kaykyextr3me/Instafake/blob/d14ee0adedb9021bf10f722fc7dd4ff78fe771b2/files_readme/tela_ver_email.png" width="500x">
 </div>
 
+As senhas dos usuários são criptografadas e depois salvas no banco de dados com o auxílio da biblioteca bcrypt.
+
 
 
 
