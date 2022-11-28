@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/css/style_perfilpage.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css"
+    integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
+  <title>Meu Perfil</title>
+  <link rel="icon" type="image/x-icon" href="static\imagens\icon_instagram.jpg">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-light nav-top">
+      <div class="container-fluid nav-container">
+        <a class="navbar-brand" href="/" target="_blank"><img
+            src="static/imagens/logo.png" style=" max-width:130px;
+                  max-height:80px"></a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+        </form>
+        <div style="width: 30%;">
+          <i class="bi bi-house-door icons"></i>
+          <i class="bi bi-inbox icons"></i>
+          <i class="bi bi-compass icons"></i>
+          <i class="bi bi-heart icons"></i>
+          <a href="/perfil">
+          <img class="img-nav" src="{{usuario['foto_perfil']}}"> </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main-->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-0 col-md-2"></div>
+        <div class="col-12 col-md-8">
+
+          <!-- Profile-->
+          <div class="container">
+            <div class="row" style="padding-top: 20px;">
+              <div class="col-3">
+                <img class="img-profile" src="{{usuario['foto_perfil']}}">
+              </div>
+              <div class="col-7">
+                <div class="row" style="padding-top: 20px; padding-bottom: 10px;">
+                  <div class="col-8 col-lg-5">
+                    <h2 class="username">{{usuario['usuario']}}</h2>
+                  </div>
+
+                  <div class="col-4 col-lg-6">
+                    <a href="/editarperfil">
+                    <button type="button" class="btn btn-outline-secondary button-edit">Editar
+                      perfil</button>
+                    </a>
+
+                    <a style="text-decoration: none" href="/deslogar" onclick="return confirm('Quer deslogar?');" title="Deslogar">⚙️</a>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <p class="profile-datas"><strong>194</strong> publicações</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="profile-datas"><strong>5.300</strong> seguidores</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="profile-datas"><strong>667</strong> seguindo</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <h1 class="name">{{usuario['nome']}}</h1>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <p class="profile-desc">{{usuario['biografia']}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2"></div>
+            </div>
+          </div>
+
+          <!-- Stories-->
+          <div style="padding-top: 0px;">
+            <div class="row">
+              <div class="col-2"> <canvas id="myCrl"></canvas></div>
+              <div class="col-2"> <canvas id="myCrl1"></canvas></div>
+              <div class="col-2"> <canvas id="myCrl2"></canvas></div>
+            </div>
+          </div>
+          <div style="padding-bottom: 40px;">
+            <div class="row">
+              <div class="col-2 stories"> Checklist</div>
+              <div class="col-2 stories"> Youtube</div>
+              <div class="col-2 stories"> Developer</div>
+            </div>
+          </div>
+
+          <!-- Line-->
+          <hr size="3" width="100%" color="#EEEEEE" style="margin: 0%;">
+
+          <!-- Nav-Feed-->
+          <ul class="nav nav-tabs nav-feed" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active nav-link-1" id="home-tab" onClick="window.location.reload()" data-bs-toggle="tab" href="#home" role="tab"
+                aria-controls="home" aria-selected="true"><i class="bi bi-grid-3x3"></i> PUBLICAÇÕES</a>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a class="nav-link nav-link-2" id="profile-tab" data-bs-toggle="tab" onclick="popupCenter({url: '/criar_nova_publicao', title: 'xtf', w: 900, h: 500}); " role="tab"
+                aria-controls="profile" style="cursor: pointer;" aria-selected="false"><i class="bi bi-file-person"></i> CRIAR 📲</a>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a class="nav-link nav-link-2" id="profile-tab" data-bs-toggle="tab" href='#profile' role="tab"
+                aria-controls="profile" aria-selected="false"><i class="bi bi-file-person"></i> MARCADOS</a>
+            </li>
+
+          </ul>
+
+          <!-- Card-Feed-->
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            
+              <div class="row" style="padding-bottom: 25px;">
+                {% for post in posts %}
+                {% for img in post %}
+                <div class="col-4">
+                  <div class="card">
+                    <img src="{{img}}" class="card-img-top" alt="...">
+                  </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+
+              </div>
+        
+
+
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+          </div>
+        </div>
+        <div class="col-0 col-md-2"></div>
+      </div>
+    </div>
+  </section>
+
+<script type="text/javascript" src="static/js/scripts_perfilpage.js"></script>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
+</html

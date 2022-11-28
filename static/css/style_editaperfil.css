@@ -1,0 +1,264 @@
+/* -------------------*/
+.body {
+    background-color: white !important;
+}
+
+.nav-top {
+    height: 63px;
+    background-color: white !important;
+    border-top: 0.5px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.nav-container {
+    padding-left: 25% !important;
+    padding-right: 25% !important;
+}
+
+.img-nav {
+    border-radius: 100%;
+    -o-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    max-width: 30px;
+    max-height: 25px;
+}
+
+.img-profile {
+    border-radius: 100%;
+    -o-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    max-width: 200px;
+    max-height: 150px;
+}
+
+.form-control {
+    border-radius: .15rem !important;
+    padding: 0% !important;
+    background-color: #fafafa !important;
+    text-align: center;
+    font-size: 15px !important;
+}
+
+.icons {
+    padding: 4%;
+    font-size: 25px;
+}
+
+.button-edit {
+    color: black !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-color: #dae1e7 !important;
+}
+
+/* -------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 93vh;
+    display: grid;
+    grid-template-areas: "l r";
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+.nav-right {
+    grid-area: r;
+    min-width: 500px;
+    min-height: 615px;
+}
+
+/****/
+
+.box {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 25px;
+    max-width: 500px;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.logo-instagram {
+    width: 175px;
+    padding: 25px;
+}
+
+.nav-right input {
+    padding: 5px 15px;
+    font-size: 12px;
+    min-width: 400px;
+    min-height: 35px;
+    margin-bottom: 5px;
+    margin: 5px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    color: #8e8e8e;
+    border-radius: 5px;
+}
+
+.nav-right button {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    min-width: 230px;
+    border: 0;
+    color: #fff;
+    background: #a9dfff;
+}
+
+
+.box-footer {
+    padding: 25px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+
+
+.cropped1 {
+    width: 175px;
+    /* width of container */
+    height: 50px;
+    /* height of container */
+    object-fit: cover;
+
+}
+
+label {
+    font-weight: 700;
+}
+
+.input_des {
+    pointer-events: none;
+    outline: none;
+    text-indent: -9999px;
+}
+
+.input_des input {
+    background: #e9e5e5;
+}
+
+.msg_span {
+    color: rgb(48, 48, 216);
+    font-weight: 700;
+    font-size: 15px;
+    align-items: center;
+    text-align: center;
+    left: 110px;
+    position: relative;
+}
+
+/*************************************************/
+
+/* Checkbox Hack */
+
+.nav-left {
+    grid-area: l;
+    min-width: 320px;
+    height: 93vh;
+    background: whitesmoke;
+    margin: 10px;
+}
+
+
+#toggle-1 {
+    display: none;
+}
+
+.nav-left label {
+    cursor: pointer;
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+    text-align: center;
+    
+    border: 1px solid #dbdbdb;
+    color: #495057;
+    background-color: #fafafa !important;
+    border-color: gray #fff #fff !important;
+   
+    font-size: 18px;
+    font-weight: 630;
+}
+
+/* CSS padrão da div */
+#mostra {
+    display: none;
+}
+
+
+
+#mostra .form-input_senha input{
+    padding: 5px 15px;
+    font-size: 12px;
+    min-width: 220px;
+    min-height: 30px;
+    margin-bottom: 5px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    color: #8e8e8e;
+    border-radius: 3px;
+    margin: 5px;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* CSS quando o checkbox está marcado */
+#toggle-1:checked~#mostra {
+    display: block;
+    width: 280px;
+    height: 170px;
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    margin: 20px;
+    position: relative;
+    top: 70px;
+    position: relative
+}
+
+.nav-left button{
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    min-width: 170px;
+    border: 0;
+    color: #fff;
+    background: #a9dfff;
+    margin: 0;
+
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+

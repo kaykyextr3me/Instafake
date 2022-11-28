@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: gray;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    background: #fafafa;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-areas: "l r" "f f";
+    justify-content: center;
+    align-content: center;
+}
+
+.nav-right {
+    grid-area: r;
+    min-width: 420px;
+    min-height: 615px;
+}
+
+.footer {
+    grid-area: f;
+    justify-self: center;
+    text-align: center;
+    max-width: 780px;
+    z-index: 1;
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+
+.nav-left .mobile {
+    background-image: url(imagens\mobile.png);
+    min-width: 454px;
+    min-height: 618px;
+}
+
+.nav-left img {
+    position: relative;
+    top: 60px;
+    left: 65px;
+    width: 300px;
+    height: 490px;
+}
+
+.footer .links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.footer li a {
+    text-decoration: none;
+    padding: 5px;
+    color: #8e8e8e;
+}
+
+
+
+/****/
+
+.box {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 25px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.logo-instagram {
+    width: 175px;
+    padding: 25px;
+}
+
+.nav-right input {
+    padding: 5px 15px;
+    font-size: 12px;
+    min-width: 200px;
+    margin-bottom: 5px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    color: #8e8e8e;
+    border-radius: 5px;
+}
+
+.nav-right button {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    min-width: 230px;
+    border: 0;
+    color: #fff;
+    background: #a9dfff;
+}
+
+.nav-right p {
+    color: #8e8e8e;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 25px
+}
+
+.nav-right p::before {
+    content: '-------------';
+    padding: 10px;
+    position: relative;
+    top: -5px;
+}
+
+.nav-right p::after{
+    content: '-------------';
+    padding: 10px;
+    position: relative;
+    top: -5px;
+}
+
+.nav-right .entrar-face{
+    color: #374c89;
+    font-weight: 700;
+}
+
+.nav-right .azul{
+    color: #374c89;
+    font-size: 12px;
+}
+
+.box-footer{
+    padding: 25px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.box-footer img{
+    max-width: 115px;
+    padding: 15px 5px;
+
+}
+
+.link-azul{
+    color: #008eff;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+
+.msg_erro{
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    top: -5px;
+}
+
+
+/* tela cadastro*/
+
+.logo-instagram_cad {
+    width: 175px;
+    padding: 25px;
+}
+
+.cropped1 {
+    width: 175px; /* width of container */
+    height: 50px; /* height of container */
+    object-fit: cover;
+    
+}
+
+.head_span{
+    
+    justify-self: center;
+    text-align: center;
+    max-width: 200px;
+    font-size: 15px;
+    color: #8e8e8e;
+    margin: 10px;
+
+}
+
+.msg{
+
+    justify-self: center;
+    text-align: center;
+    max-width: 780px;
+    font-size: 12px;
+    color: #8e8e8e;
+    margin-top: 6px;
+
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/style_editaperfil.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
+    <title>Editar Perfil</title>
+    <link rel="icon" type="image/x-icon" href="static\imagens\icon_instagram.jpg">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light nav-top">
+            <div class="container-fluid nav-container">
+                <a class="navbar-brand" href="/" target="_blank"><img src="static/imagens/logo.png" style=" max-width:130px;
+                  max-height:80px"></a>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                </form>
+                <div style="width: 30%;">
+                    <i class="bi bi-house-door icons"></i>
+                    <i class="bi bi-inbox icons"></i>
+                    <i class="bi bi-compass icons"></i>
+                    <i class="bi bi-heart icons"></i>
+                    <a href="/perfil">
+                        <img class="img-nav" src="{{usuario['foto_perfil']}}"> </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main-->
+    <section>
+        <div class="container">
+
+
+            <div class="nav-left">
+
+                <label for="toggle-1">
+                    Alterar Senha
+                </label>
+                <input type="checkbox" id="toggle-1">
+                <div id="mostra">
+                    <form action="editar_senhaform" method="post">
+                        <span class="form-input_senha">
+                            <input type="text" style="height: 21px" placeholder="senha atual" name="senha_atual">
+                        </span>
+                        <span class="form-input_senha ">
+                            <input type="text" style="height: 21px" placeholder="Nova Senha" name="nova_senha">
+                        </span>
+                        <button style="min-height: 30px;" type="submit" onclick="func_senha()">Enviar</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="nav-right">
+                <div class="box formulario">
+                    <form action="editar_perfilform" method="post" enctype="multipart/form-data">
+
+                        <div>
+                            <img class="img-nav" src="{{usuario['foto_perfil']}}">
+                            <span class="form-input">
+                                <input type="file" style="height: 21px" name="foto_perfil" accept=".png, .jpeg, .webp">
+                            </span>
+                            <br>
+                            <span class="msg_span"> Altere sua foto de perfil </span>
+                        </div>
+                        <br>
+                        <label> Nome </label>
+                        <span class="form-input input_des">
+                            <input type="text" style="height: 21px" placeholder="{{usuario['nome']}}">
+                        </span>
+                        <label> Nome de Usuário </label>
+                        <span class="form-input">
+                            <input type="text" style="height: 21px" placeholder="{{usuario['usuario']}}"
+                                name="nome_usuario">
+                        </span>
+                        <label> Biografia </label>
+                        <span class="form-input">
+                            <input type="text" style="height: 21px" placeholder="Insira sua biografia" name="biografia">
+                        </span>
+                        <button style="min-height: 30px;" type="submit" onclick="func()">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+        </script>
+
+    <script>
+        function func() {
+            alert("Seu perfil foi atualizado!!");
+        }
+        function func_senha() {
+            alert("Sua senha foi atualizada!!");
+        }
+    </script>
+</body>
+
+</html>

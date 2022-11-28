@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style_telalogin_cadastro.css">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="static\imagens\icon_instagram.jpg">
+</head>
+
+<body>
+<div class="container">
+
+    <div class="nav-right">
+        <div class="box formulario">
+            <form action="login_insta" method="post">
+                <img class="logo-instagram" src="static/imagens/logo_instagram.png">
+                <span class="form-input">
+                    <input type="text" placeholder="Telefone, nome do usuário ou email" name="celular_email_login">
+                </span>
+                <span class="form-input">
+                    <input type="password" placeholder="Senha" name="senha_login">
+                </span>
+                <button type="submit">Entrar</button>
+            </form>
+            <span class="msg_erro">{{msg}} </span>
+            <p> OU </p>
+            <span class="entrar-face"> Entrar com o Facebook </span>
+            <span class="azul"> Esqueceu a senha? </span>
+        </div>
+
+        <div class="box">
+            Não tem uma conta? <a href="/cadastro" class="link-azul">Cadastre-se</a>
+        </div>
+
+        <div class="box-footer">
+            <span> Obtenha o aplicativo </span>
+            <div class="store"></div>
+            <img class="google" alt="Google" src="https://static.cdninstagram.com/rsrc.php/v3/y_/r/tUzYKZ-xrQK.png">
+        </div>
+
+    </div>
+    <div class="footer">
+        <ul class="links">
+            <li>
+                <a href="#">Sobre</a>
+            </li>
+            <li>
+                <a href="#">Meta</a>
+            </li>
+            <li>
+                <a href="#">Carreiras</a>
+            </li>
+            <li>
+                <a href="#">Ajuda</a>
+            </li>
+            <li>
+                <a href="#">Artes Visuais</a>
+            </li>
+            <li>
+                <a href="#">Termos</a>
+            </li>
+        </ul>
+
+        <span class="texto-footer">
+                Português (Brasil)
+
+                Português (Brasil)
+                © 2022 Instagram from Meta
+            </span>
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

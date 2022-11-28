@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style_telalogin_cadastro.css">
+    <title>Cadastre-se</title>
+    <link rel="icon" type="image/x-icon" href="static\imagens\icon_instagram.jpg">
+</head>
+
+<body>
+<div class="container">
+
+    <div class="nav-right">
+        <div class="box formulario">
+            <img class="cropped1"
+                 src="static\imagens\logo_instagram.png">
+
+            <span class="head_span">Cadastre-se para ver fotos e vídeos dos seus amigos.</span>
+
+            <span class="entrar-face"> Entrar com o Facebook </span>
+            <br>
+            <p> OU </p>
+
+            <form action="cadastro_insta" method="post">
+                <span class="form-input">
+                    <input type="text" style="height: 21px" placeholder="Número do celular ou email" name="email_celular_cadastro">
+                </span>
+                <span class="form-input">
+                    <input type="text" style="height: 21px" placeholder="Nome Completo" name="nome_cadastro">
+                </span>
+                <span class="form-input">
+                    <input type="text" style="height: 21px" placeholder="Nome de usuário" name="usuario_cadastro">
+                </span>
+                <span class="form-input">
+                    <input type="password" style="height: 21px " placeholder="Senha" name="senha_cadastro">
+                </span>
+
+
+                <span class="msg"> Ao se cadastrar, você concorda com nossos Termos, Política de Privacidade e Política de Cookies. </span>
+
+                <button style="min-height: 30px;" type="submit">Cadastre - se</button>
+            </form>
+            <span class="msg_erro">{{msg}} </span>
+        </div>
+
+        <div class="box">
+            Tem uma conta? <a href="/login" class="link-azul">Conecte-se</a>
+        </div>
+
+        <div class="box-footer">
+            <span> Obtenha o aplicativo </span>
+            <div class="store"></div>
+            <img class="google" alt="Google" src="https://static.cdninstagram.com/rsrc.php/v3/y_/r/tUzYKZ-xrQK.png">
+        </div>
+
+    </div>
+    <div class="footer">
+        <ul class="links">
+            <li>
+                <a href="#">Sobre</a>
+            </li>
+            <li>
+                <a href="#">Meta</a>
+            </li>
+            <li>
+                <a href="#">Carreiras</a>
+            </li>
+            <li>
+                <a href="#">Ajuda</a>
+            </li>
+            <li>
+                <a href="#">Artes Visuais</a>
+            </li>
+            <li>
+                <a href="#">Termos</a>
+            </li>
+        </ul>
+
+        <span cla="texto-footer">
+                Português (Brasil)
+
+                Português (Brasil)
+                © 2022 Instagram from Meta
+            </span>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
