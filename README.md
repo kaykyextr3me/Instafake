@@ -5,6 +5,7 @@ Projeto de uma cópia do Instagram. Ele conta com a maioria das funções do Ins
 ## → Tecnologias
 → Python <br>
 → Flask <br>
+→ Flask Session <br>
 → Mysql <br>
 → HTML5, CSS3 <br>
 → bcrypt <br>
