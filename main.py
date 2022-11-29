@@ -33,18 +33,17 @@ def cadastrar():
     usuario = request.form['usuario_cadastro']
     senha_cadastro = request.form['senha_cadastro']
     func.armazenanar_temporariamente(email_celular_cadastro, nome_cadastro, usuario, senha_cadastro)
-
     return redirect('/verificaremail')
 
 
 @app.route('/verificaremail')
 def verificaremail():
-    celular_email, nome_completo, nome_usuario, senha = func.ler_dados_temporariemente()
-    print(celular_email, nome_completo, nome_usuario, senha)
+    celular_email = func.ler_dados_temporariemente(True)
     try:
         func.gerar_email(celular_email)
     except Exception as error:
         print(f'Problema encontrado foi {error.__class__}')
+        func.limpar_lixo()
         return render_template('telacadastro.html', msg='email inválido')
     else:
         return render_template('/verificar_email.html', email=celular_email)
@@ -58,13 +57,13 @@ def verificaremail_form():
     digito04 = request.form['digito04']
     codigo = digito01 + digito02 + digito03 + digito04
     if func.verificar_email(codigo):
-        celular_email, nome_completo, nome_usuario, senha = func.ler_dados_temporariemente()
-        print(celular_email, nome_completo, nome_usuario, senha)
+        celular_email = func.ler_dados_temporariemente(True)
         bd.cadastrar_usuario()
         session['name'] = None
         session["name"] = celular_email
         return redirect('/perfil')
     else:
+        func.limpar_lixo()
         return redirect('/cadastro')
 
 
@@ -90,7 +89,7 @@ def logar():
     if len(credenciais) != 0:
         session["name"] = celular_email
         return redirect("/perfil")
-    return render_template("telalogin.html", msg='Usuario ou Senha Incorretos' )
+    return render_template("telalogin.html", msg='Usuario ou Senha Incorretos')
 
 
 @app.route('/perfil')
@@ -136,7 +135,6 @@ def editarsenha():
     nova_senha = request.form['nova_senha']
     id_usuario = bd.selecionarid(usuario_atual)
     bd.alterar_senha(id_usuario, nova_senha)
-    print(f'A nova senha é {nova_senha}')
     return redirect('/perfil')
 
 

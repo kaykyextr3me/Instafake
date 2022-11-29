@@ -24,13 +24,17 @@ def armazenanar_temporariamente(email_celular, nome_cadastro, usuario, senha_cad
     arquivo.close()
 
 
-def ler_dados_temporariemente():
+def ler_dados_temporariemente(ver=False):
+    cont = 0
     with open("dados.txt", "r") as cadastro:
         lista = list()
         for lin in cadastro.readlines():
             dado = lin.split('-')
             for d in dado:
                 lista.append(d.strip())
+                cont += 1
+                if ver is True and cont == 1:  # Caso queira retornar apenas o parâmetro de email
+                    return d.strip()
     return lista
 
 
@@ -39,9 +43,9 @@ def gerar_email(email):
     import random
     codigo = random.randint(1000, 9999)
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server.login("remetente@gmail.com", "temjtturvlmznnct")
+    server.login("kayky1412dbz@gmail.com", "temjtturvlmznnct")
     server.sendmail(
-        "remetente@gmail.com",
+        "kayky1412dbz@gmail.com",
         f"{email}",
         f"{codigo}")
     server.quit()
