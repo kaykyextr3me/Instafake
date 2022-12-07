@@ -12,7 +12,6 @@ def conecta_banco():
 
 def cadastrar_usuario():
     celular_email, nome_completo, nome_usuario, senha = func.ler_dados_temporariemente()
-    print(f'A senha é {senha}')
     senha = func.criptografar_senha(senha)
     if celular_email.isnumeric():
         sql_insert = 'insert into usuario_dadospessoais(celular, nome_completo, nome_usuario, senha, ' \
@@ -44,7 +43,7 @@ def selecionar_usuario(celular_email, senha):
 
 def autenticar_login(celular_email, senha):
     if celular_email.isnumeric():
-        sql_select = 'select senha from  usuario_dadospessoais where celular = %s'
+        sql_select = f'select senha from  usuario_dadospessoais where celular = {celular_email}'
     else:
         print('email')
         sql_select = f'select senha from  usuario_dadospessoais where email = "{celular_email}"'
@@ -54,7 +53,6 @@ def autenticar_login(celular_email, senha):
     maipulador = conexao.cursor()
     maipulador.execute(sql_select,)
     dados = maipulador.fetchone()
-    print(f'Dados:{dados}')
     if func.validar_senha(dados, senha):
         return 'senha correta'
     else:
