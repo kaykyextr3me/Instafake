@@ -43,9 +43,9 @@ def gerar_email(email):
     import random
     codigo = random.randint(1000, 9999)
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server.login("remetente@gmail.com", "geqqpsjlsjzfawla")
+    server.login("projetoinstafakepython@gmail.com", "gcygwhwnvjnorkao")
     server.sendmail(
-        "remetente@gmail.com",
+        "projetoinstafakepython@gmail.com",
         f"{email}",
         f"{codigo}")
     server.quit()

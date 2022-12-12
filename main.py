@@ -20,7 +20,7 @@ def homepag():
     recomendados = bd.moldar_recomendados(id_user)
     return render_template('index.html', usuario=usuario, feed=feed, recomendados=recomendados)
 
-
+#tetseg
 @app.route('/cadastro')
 def cadastropagge():
     return render_template('telacadastro.html')
