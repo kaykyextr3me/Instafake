@@ -16,8 +16,8 @@ body {
 
 
 main,
-aside,
-footer {
+aside
+ {
     background-color: #fafafa !important;
     display: flex;
     margin: 3px;
@@ -135,7 +135,7 @@ header {
 
 main {
     flex: 20 1 500px;
-    height: calc(100vh - 224px);
+    height: 100%;
     flex-wrap: wrap;
     overflow: auto;
 
@@ -149,7 +149,7 @@ aside {
 
 main section{
     width: 55%;
-    height: 2000px;
+    height: 2500px;
     margin: auto;
     background: #fafafa;
 }
