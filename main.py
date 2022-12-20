@@ -101,6 +101,7 @@ def perfilpag():
     id_usuario = bd.selecionarid(usuario_atual)
     usuario = bd.moldar_perfil(usuario_atual)
     posts = bd.selecionar_posts(id_usuario)
+    usuario['qtd_publicacoes'] = len(posts)
     return render_template('perfil_page.html', usuario=usuario, posts=posts)
 
 

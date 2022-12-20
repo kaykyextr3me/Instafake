@@ -21,7 +21,7 @@ def cadastrar_usuario():
                      'foto_perfil, biografia) values (%s, %s, %s, %s, %s, %s)'
 
     biografia = 'Usuário do Instagram'
-    foto_perfil = 'static/dadosuser/foto-instagram.png'
+    foto_perfil = 'static/dadosuser/foto-instagram.jpg'
     valores = (celular_email, nome_completo, nome_usuario, senha, foto_perfil, biografia)
     conexao = conecta_banco()
     manipulador = conexao.cursor()
@@ -77,7 +77,8 @@ def moldar_perfil(user_atual):
         dados_perfil.update({'nome': dado[0],
                              'usuario': dado[1],
                              'foto_perfil': dado[2],
-                             'biografia': dado[3]
+                             'biografia': dado[3],
+                             'qtd_publicacoes': 0
                              })
     return dados_perfil
 
