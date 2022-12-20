@@ -155,4 +155,13 @@ def novapublicacao():
     return render_template('janela_nova_pub.html', fechar='window.close()')
 
 
+@app.route('/user', methods=['GET'])
+def outrousuario_page():
+    usuario_selecionado = request.args.get('user')
+    id_usuario = bd.selecionarid(usuario_selecionado)
+    usuario = bd.moldar_perfil(usuario_selecionado)
+    posts = bd.selecionar_posts(id_usuario)
+    return render_template('outrousuario.html', usuario=usuario, posts=posts)
+
+
 app.run(debug=True)

@@ -205,7 +205,7 @@ def moldar_feed():
 
 
 def moldar_recomendados(id_usuario_atual):
-    sql_select = f'select id, nome_usuario, foto_perfil from usuario_dadospessoais' \
+    sql_select = f'select id, nome_usuario, foto_perfil, email from usuario_dadospessoais' \
                  f' where id != {id_usuario_atual} ORDER BY RAND() LIMIT 5'
     conexao = conecta_banco()
     maipulador = conexao.cursor()
@@ -215,7 +215,8 @@ def moldar_recomendados(id_usuario_atual):
         dados_feed = dict()
         dados_feed.update({'id_usuario': dado[0],
                            'nome_usuario': dado[1],
-                           'foto_perfil': dado[2]
+                           'foto_perfil': dado[2],
+                           'email': dado[3]
                            })
         dados.append(dados_feed)
     return dados
