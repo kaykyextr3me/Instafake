@@ -157,17 +157,18 @@ def novapublicacao():
 
 @app.route('/user', methods=['GET'])
 def outrousuario_page():
+    if not session.get("name"):
+        return redirect("/login")
     usuario_selecionado = request.args.get('user')
     usuario_atual = session.get("name")
-    print(usuario_atual)
-    print(usuario_selecionado)
     if usuario_selecionado == usuario_atual:
         return redirect('/perfil')
     id_usuario = bd.selecionarid(usuario_selecionado)
     usuario = bd.moldar_perfil(usuario_selecionado)
+    usuario_atual = bd.moldar_perfil(usuario_atual)
     posts = bd.selecionar_posts(id_usuario)
     usuario['qtd_publicacoes'] = len(posts)
-    return render_template('outrousuario.html', usuario=usuario, posts=posts)
+    return render_template('outrousuario.html', usuario=usuario, posts=posts, usuario_atual=usuario_atual)
 
 
 app.run(debug=True)
