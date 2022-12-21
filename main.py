@@ -161,14 +161,14 @@ def outrousuario_page():
         return redirect("/login")
     usuario_selecionado = request.args.get('user')
     usuario_atual = session.get("name")
-    if usuario_selecionado == usuario_atual:
+    list_usuario_atual = bd.moldar_perfil(usuario_atual)
+    if usuario_selecionado == usuario_atual or usuario_selecionado == list_usuario_atual['usuario']:
         return redirect('/perfil')
     id_usuario = bd.selecionarid(usuario_selecionado)
     usuario = bd.moldar_perfil(usuario_selecionado)
-    usuario_atual = bd.moldar_perfil(usuario_atual)
     posts = bd.selecionar_posts(id_usuario)
     usuario['qtd_publicacoes'] = len(posts)
-    return render_template('outrousuario.html', usuario=usuario, posts=posts, usuario_atual=usuario_atual)
+    return render_template('outrousuario.html', usuario=usuario, posts=posts, usuario_atual=list_usuario_atual)
 
 
 app.run(debug=True)

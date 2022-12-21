@@ -32,8 +32,10 @@ def cadastrar_usuario():
 def selecionar_usuario(celular_email, senha):
     if celular_email.isnumeric():
         sql_select = 'select * from  usuario_dadospessoais where celular = %s and senha = %s'
-    else:
+    elif '@' in celular_email:
         sql_select = 'select * from  usuario_dadospessoais where email = %s and senha = %s'
+    else:
+        sql_select = 'select * from  usuario_dadospessoais where nome_usuario = %s and senha = %s'
     valores = (celular_email, senha)
     conexao = conecta_banco()
     maipulador = conexao.cursor()
@@ -63,10 +65,12 @@ def moldar_perfil(user_atual):
     if user_atual.isnumeric():
         select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia ' \
                        'from usuario_dadospessoais where celular = %s'
-    else:
+    elif '@' in user_atual:
         select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia ' \
                        'from usuario_dadospessoais where email = %s'
-
+    else:
+        select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia ' \
+                       'from usuario_dadospessoais where nome_usuario = %s'
     valor = (user_atual,)
     conexao = conecta_banco()
     maipulador = conexao.cursor()
@@ -146,8 +150,10 @@ def alterar_senha(id_usuario, nova_senha):
 def selecionarid(celular_email):
     if celular_email.isnumeric():
         sql_select = 'select id from  usuario_dadospessoais where celular = %s'
-    else:
+    elif '@' in celular_email:
         sql_select = 'select id from  usuario_dadospessoais where email = %s'
+    else:
+        sql_select = 'select id from  usuario_dadospessoais where nome_usuario = %s'
     valores = (celular_email,)
     conexao = conecta_banco()
     maipulador = conexao.cursor()
