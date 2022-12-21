@@ -72,3 +72,6 @@ def limpar_lixo():
     import os
     if os.path.exists(f'dados.txt'):
         os.remove('dados.txt')
+
+
+
