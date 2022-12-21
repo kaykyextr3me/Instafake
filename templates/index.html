@@ -45,8 +45,8 @@
                 <span id="sugestoes"> Sugestão para você </span> <br>
                 {% for item in recomendados %}
                 <div class="item_recomendado">
-                    <img class="img-nav" src="{{item['foto_perfil']}}">
-                     <span> <a style="text-decoration: none; color: black;" href='/user?user={{item["email"]}}'>  {{item['nome_usuario']}}  </a> </span> 
+                    <a style="text-decoration: none; color: black;" href='/user?user={{item["nome_usuario"]}}'>  <img  class="img-nav" src="{{item['foto_perfil']}}"> </a>
+                     <span> <a style="text-decoration: none; color: black;" href='/user?user={{item["nome_usuario"]}}'>  {{item['nome_usuario']}}  </a> </span> 
                 </div>
                 {% endfor %}
             </div>
@@ -54,8 +54,8 @@
                 {% for pub in feed %}
             <div class="box_publicacao">
                 <div class="usuario_post">
-                    <img class="img-nav" src="{{pub['foto_perfil']}}">
-                    <span class="span_s"> {{pub['nome_usuario']}} </span>
+                    <a  style="text-decoration: none; color: black;"  href='/user?user={{pub["nome_usuario"]}}'> <img class="img-nav" src="{{pub['foto_perfil']}}"> </a>
+                    <span class="span_s"> <a style="text-decoration: none; color: black;"  href='/user?user={{pub["nome_usuario"]}}'>  {{pub['nome_usuario']}} </a></span>
                     <hr>
                     <img style="border: 1px solid black;" src="{{pub['name_post']}}">
                 </div>
