@@ -28,7 +28,7 @@ Para realizar o cadastro no Instafake foi desenvolvido um sistema com código de
 
 ### → Tela de Cadastro
 <div align="center">
-  <img src="https://github.com/kaykyextr3me/Instafake/blob/d14ee0adedb9021bf10f722fc7dd4ff78fe771b2/files_readme/tela_cadastro_.png" width="500x">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/ec8686e8e77251d6e80d30ab873e6a4c4536e8c3/files_readme/tela_cadastro_Instafake.png" width="500x">
 </div> <br>
 
 ### → Tela de Verificação de Email
@@ -44,7 +44,7 @@ Os usuários previamente cadastrados podem se conectar ao Instafake a partir de 
 
 ### → Tela de Login
 <div align="center">
-  <img src="https://github.com/kaykyextr3me/Instafake/blob/75c917f53bfd22ea4c9bd0f4ebc89d920753e9b0/files_readme/tela_login.png" width="500x">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/ec8686e8e77251d6e80d30ab873e6a4c4536e8c3/files_readme/tela_login_Instafake.png" width="500x">
 </div>
 
 ## ► Perfils dos Usuários do Instafake
@@ -52,12 +52,12 @@ Após realizado o cadastro ou o login, o usuário é redirecionado para a sua p�
 
 ### → Tela de Perfil de Usuário
 <div align="center">
-  <img src="https://github.com/kaykyextr3me/Instafake/blob/dbd40be5b70d332326a313571ae913cf479c5f7c/files_readme/tela_perfil_usuario.png" width="500x">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/ec8686e8e77251d6e80d30ab873e6a4c4536e8c3/files_readme/tela_perfil_usuario_Instafake.png" width="500x">
 </div>
 
 ### → PopUp Realizar Nova Publicação
 <div align="center">
-  <img src="https://github.com/kaykyextr3me/Instafake/blob/05381de62504891fd7a34d200a827ca4213c4d39/files_readme/pop_up_novopost.png" width="500x">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/ec8686e8e77251d6e80d30ab873e6a4c4536e8c3/files_readme/pop_up_novopost_Instafake.png" width="500x">
 </div>
 
 ## ► Atualização de Dados de Usuário
