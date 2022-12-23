@@ -37,7 +37,20 @@
         </nav>
     </header>
 
-    <aside>Relacionado</aside>
+    <aside>
+        <br>
+        <div class="relacionados">
+            <ul>
+                <li> <button class="btn btn-light"> 🧭 Explorar </button> </li>
+                <li> <button class="btn btn-light"> 🎬 Reels </button> </li>
+                <li> <button class="btn btn-light"> 💬 Mensagens </button> </li>
+                <li> <button class="btn btn-light"> 🤍 Notificações</button> </li>
+                <li> <button class="btn btn-light"
+                        onclick="popupCenter({url: '/criar_nova_publicao', title: 'xtf', w: 900, h: 500});">
+                        📲 Criar </button> </li>
+            </ul>
+        </div>
+    </aside>
 
     <main>
         <section>
@@ -45,8 +58,10 @@
                 <span id="sugestoes"> Sugestão para você </span> <br>
                 {% for item in recomendados %}
                 <div class="item_recomendado">
-                    <a style="text-decoration: none; color: black;" href='/user?user={{item["nome_usuario"]}}'>  <img  class="img-nav" src="{{item['foto_perfil']}}"> </a>
-                     <span> <a style="text-decoration: none; color: black;" href='/user?user={{item["nome_usuario"]}}'>  {{item['nome_usuario']}}  </a> </span> 
+                    <a style="text-decoration: none; color: black;" href='/user?user={{item["nome_usuario"]}}'> <img
+                            class="img-nav" src="{{item['foto_perfil']}}"> </a>
+                    <span> <a style="text-decoration: none; color: black;" href='/user?user={{item["nome_usuario"]}}'>
+                            {{item['nome_usuario']}} </a> </span>
                 </div>
                 {% endfor %}
             </div>
@@ -54,8 +69,10 @@
                 {% for pub in feed %}
             <div class="box_publicacao">
                 <div class="usuario_post">
-                    <a  style="text-decoration: none; color: black;"  href='/user?user={{pub["nome_usuario"]}}'> <img class="img-nav" src="{{pub['foto_perfil']}}"> </a>
-                    <span class="span_s"> <a style="text-decoration: none; color: black;"  href='/user?user={{pub["nome_usuario"]}}'>  {{pub['nome_usuario']}} </a></span>
+                    <a style="text-decoration: none; color: black;" href='/user?user={{pub["nome_usuario"]}}'> <img
+                            class="img-nav" src="{{pub['foto_perfil']}}"> </a>
+                    <span class="span_s"> <a style="text-decoration: none; color: black;"
+                            href='/user?user={{pub["nome_usuario"]}}'> {{pub['nome_usuario']}} </a></span>
                     <hr>
                     <img style="border: 1px solid black;" src="{{pub['name_post']}}">
                 </div>
@@ -67,8 +84,34 @@
 
 
 
-    <script type="text/javascript" src="static/js/scripts.js"></script>
+    
+    <script type="text/javascript">
+            const popupCenter = ({url, title, w, h}) => {
+    // Fixes dual-screen position                             Most browsers      Firefox
+    const dualScreenLeft = window.screenLeft !==  undefined ? window.screenLeft : window.screenX;
+    const dualScreenTop = window.screenTop !==  undefined   ? window.screenTop  : window.screenY;
 
+    const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+    const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+    const systemZoom = width / window.screen.availWidth;
+    const left = (width - w) / 2 / systemZoom + dualScreenLeft
+    const top = (height - h) / 2 / systemZoom + dualScreenTop
+    const newWindow = window.open(url, title, 
+      `
+      scrollbars=yes,
+      width=${w / systemZoom}, 
+      height=${h / systemZoom}, 
+      top=${top}, 
+      left=${left}
+      `
+    )
+
+    if (window.focus) newWindow.focus();
+}
+
+    </script>
+   
 </body>
 
 </html>

@@ -12,6 +12,7 @@ body {
     margin: 3px;
     flex: 1 1 100vw;
     background-color: #fafafa !important;
+    overflow-y: hidden;
 }
 
 
@@ -145,6 +146,34 @@ main {
 
 aside {
     flex: 1 1 200px;
+
+}
+
+.relacionados{
+    
+    font-size: 21px;
+    line-height: 1.5cm;
+    background:  white;
+    width: 250px;
+    height: 100%;
+    top: 61.5px;
+    position: absolute;
+    margin: auto;
+    border: 1px solid #dbdbdb;
+    text-align: justify;
+    
+
+}
+.relacionados button{
+    border: none;
+    font-size: 21px;
+    background: none;
+}
+
+.relacionados a{
+    border: none;
+    font-size: 21px;
+    background: none;
 }
 
 
@@ -325,3 +354,4 @@ a {
 .form_post input{
     margin: auto;
 }
+

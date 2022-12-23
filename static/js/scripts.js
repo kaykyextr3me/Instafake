@@ -20,3 +20,5 @@ closeMenu.addEventListener('click', () => {
         openMenu.removeAttribute('style')
     }, 200);
 })
+
+
