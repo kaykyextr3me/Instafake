@@ -42,17 +42,21 @@ def gerar_email(email):
     import smtplib
     import random
     codigo = random.randint(1000, 9999)
-    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server.login("projetoinstafakepython@gmail.com", "gcygwhwnvjnorkao")
-    server.sendmail(
-        "projetoinstafakepython@gmail.com",
-        f"{email}",
-        f"{codigo}")
-    server.quit()
-
-    arquivo = open('codigo_temporario.txt', 'w')
-    arquivo.write(f'{codigo}')
-    arquivo.close()
+    try:
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        print('teste')
+        server.login("projetoinstafakepython@gmail.com", "ikqwbptlfuivmxhm")
+        server.sendmail(
+            "projetoinstafakepython@gmail.com",
+            f"{email}",
+            f"{codigo}")
+        server.quit()
+    except Exception as error:
+        print('ocorreu um erro', error.__class__)
+    finally:
+        arquivo = open('codigo_temporario.txt', 'w')
+        arquivo.write(f'{codigo}')
+        arquivo.close()
 
 
 def verificar_email(codigo):
@@ -72,6 +76,3 @@ def limpar_lixo():
     import os
     if os.path.exists(f'dados.txt'):
         os.remove('dados.txt')
-
-
-
