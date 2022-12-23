@@ -164,16 +164,20 @@ aside {
     
 
 }
-.relacionados button{
+.relacionados button {
     border: none;
     font-size: 21px;
     background: none;
+    width: 100%;
+    text-align: justify;
 }
 
 .relacionados a{
     border: none;
     font-size: 21px;
     background: none;
+    width: 100%;
+    text-align: justify;
 }
 
 
