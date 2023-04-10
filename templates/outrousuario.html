@@ -10,6 +10,12 @@
     integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
   <title>@{{usuario['usuario']}}</title>
   <link rel="icon" type="image/x-icon" href="static\imagens\icon_instagram.jpg">
+  <script>
+    var usuario_email = "{{usuario['email']}}";
+  </script>
+
+  <script src="static\js\scripts_seguidores.js"></script>
+
 </head>
 
 <body>
@@ -55,7 +61,7 @@
 
                   <div class="col-4 col-lg-6">
                     <a href="/seguir">
-                    <button type="button" class="btn btn-outline-secondary button-edit">Seguir</button>
+                    <button type="button" id="botao_seguir" onclick="mudarBotaoSeguir()" class="btn btn-outline-secondary button-edit">Seguir</button>
                     </a>
 
                     <a href="/editarperfil">

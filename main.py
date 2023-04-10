@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, url_for
 from flask_session import Session
 import bd
 import func
+import seguidores
 
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
@@ -171,4 +172,24 @@ def outrousuario_page():
     return render_template('outrousuario.html', usuario=usuario, posts=posts, usuario_atual=list_usuario_atual)
 
 
-app.run(debug=True)
+@app.route('/seguir')
+def seguir_usuario():
+    usuario_atual = session.get("name")
+    seguidores.seguir_usuario(usuario_atual)
+    print(f'Usuario atual: {usuario_atual}')
+    return 'seguido com sucesso'
+
+
+''' 
+@app.route('/seguir', methods=['POST'])
+def receber_dados():
+    dados = request.get_json()
+    print('teste1')
+    valor_recebido = dados["usuario_seguindo_email"]
+    print('teste2')
+    # faça alguma coisa com o valor_recebido
+    return f"Recebido com sucesso {valor_recebido}"
+'''
+
+
+app.run(debug=True, host='0.0.0.0')

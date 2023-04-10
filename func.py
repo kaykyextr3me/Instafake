@@ -45,7 +45,7 @@ def gerar_email(email):
     try:
         server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
         print('teste')
-        server.login("projetoinstafakepython@gmail.com", "ikqwbptlfuivmxhm")
+        server.login("projetoinstafakepython@gmail.com", "jytzmxubcbmsxxbp")
         server.sendmail(
             "projetoinstafakepython@gmail.com",
             f"{email}",

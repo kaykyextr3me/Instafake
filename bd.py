@@ -20,7 +20,7 @@ def cadastrar_usuario():
         sql_insert = 'insert into usuario_dadospessoais(email, nome_completo, nome_usuario, senha, ' \
                      'foto_perfil, biografia) values (%s, %s, %s, %s, %s, %s)'
 
-    biografia = 'Usuário do Instagram'
+    biografia = 'Usuário do Instafake'
     foto_perfil = 'static/dadosuser/foto-instagram.jpg'
     valores = (celular_email, nome_completo, nome_usuario, senha, foto_perfil, biografia)
     conexao = conecta_banco()
@@ -47,13 +47,12 @@ def autenticar_login(celular_email, senha):
     if celular_email.isnumeric():
         sql_select = f'select senha from  usuario_dadospessoais where celular = {celular_email}'
     else:
-        print('email')
         sql_select = f'select senha from  usuario_dadospessoais where email = "{celular_email}"'
 
     print(celular_email)
     conexao = conecta_banco()
     maipulador = conexao.cursor()
-    maipulador.execute(sql_select,)
+    maipulador.execute(sql_select, )
     dados = maipulador.fetchone()
     if func.validar_senha(dados, senha):
         return 'senha correta'
@@ -63,13 +62,13 @@ def autenticar_login(celular_email, senha):
 
 def moldar_perfil(user_atual):
     if user_atual.isnumeric():
-        select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia ' \
+        select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia, email ' \
                        'from usuario_dadospessoais where celular = %s'
     elif '@' in user_atual:
-        select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia ' \
+        select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia, email ' \
                        'from usuario_dadospessoais where email = %s'
     else:
-        select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia ' \
+        select_dados = 'select nome_completo, nome_usuario, foto_perfil, biografia, email ' \
                        'from usuario_dadospessoais where nome_usuario = %s'
     valor = (user_atual,)
     conexao = conecta_banco()
@@ -78,11 +77,12 @@ def moldar_perfil(user_atual):
 
     dados_perfil = dict()
     for dado in maipulador.fetchall():
-        dados_perfil.update({'nome': dado[0],
-                             'usuario': dado[1],
+        dados_perfil.update({'nome': dado[0].capitalize(),
+                             'usuario': dado[1].capitalize(),
                              'foto_perfil': dado[2],
                              'biografia': dado[3],
-                             'qtd_publicacoes': 0
+                             'qtd_publicacoes': 0,
+                             'email': dado[4]
                              })
     return dados_perfil
 
@@ -203,7 +203,7 @@ def moldar_feed():
                            'name_post': dado[1],
                            'id_usuario': dado[2],
                            'data_post': dado[3],
-                           'nome_usuario': dado[4],
+                           'nome_usuario': dado[4].capitalize(),
                            'foto_perfil': dado[5]
                            })
         dados.append(dados_feed)
@@ -220,7 +220,7 @@ def moldar_recomendados(id_usuario_atual):
     for dado in maipulador.fetchall():
         dados_feed = dict()
         dados_feed.update({'id_usuario': dado[0],
-                           'nome_usuario': dado[1],
+                           'nome_usuario': dado[1].capitalize(),
                            'foto_perfil': dado[2],
                            'email': dado[3]
                            })
