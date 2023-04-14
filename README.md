@@ -19,7 +19,7 @@ O db_instafake possui as tabelas usuario_dadospessoais e publicacoes que possuem
 
 ### → Modelo Físico: <br>
 <div align="center">
-  <img src="https://github.com/kaykyextr3me/Instafake/blob/d14ee0adedb9021bf10f722fc7dd4ff78fe771b2/files_readme/banco%20de%20dados.png" width="500x">
+  <img src="https://github.com/kaykyextr3me/Instafake/blob/5d1110685588aa59f026404824c3065261f8095a/files_readme/banco_de_dados.png" width="500x">
 </div>
 <br>
 
