@@ -12,6 +12,7 @@ body {
     margin: 3px;
     flex: 1 1 100vw;
     background-color: #fafafa !important;
+    overflow: hidden;
     
 }
 
@@ -22,6 +23,7 @@ aside
     background-color: #fafafa !important;
     display: flex;
     margin: 3px;
+    
 }
 
 
@@ -144,6 +146,8 @@ main {
 }
 
 
+
+
 aside {
     flex: 1 1 200px;
 
@@ -186,6 +190,7 @@ main section{
     height: 2500px;
     margin: auto;
     background: #fafafa;
+    
 }
 
 @media screen and (max-width: 1340px){
